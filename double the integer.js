@@ -13,6 +13,8 @@ function doubleInteger(i) {
 
 console.log(doubleInteger(5))
 
+// or
+
 function doubleInteger1(i) {
     return i.map(num => num * 2)
 
