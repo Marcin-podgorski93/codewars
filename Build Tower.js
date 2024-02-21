@@ -33,3 +33,23 @@ function buildTower(floors) {
 }
 
 console.log(buildTower(6))
+
+
+// check
+
+function buildTower1(floors) {
+    const tower =[];
+    for (let i = 0; i < floors; i++) {
+        console.log(i)
+        const space = " ".repeat(floors - i - 1);
+        console.log(space)
+        const stars = "*".repeat(2 * i + 1);
+        console.log(stars)
+        const floor = space + stars + space;
+        console.log(floor)
+        tower.push(floor)
+    }
+    return tower;
+}
+
+console.log(buildTower1(3))
