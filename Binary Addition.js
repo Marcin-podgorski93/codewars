@@ -23,3 +23,24 @@ function addBinary(a,b) {
 console.log(addBinary(1,1));
 
 console.log(addBinary(5,9));
+
+
+//or
+
+
+function addBinary2(a,b) {
+    let sum = a + b;
+    console.log(sum)
+    let binaryString = "";
+    while (sum > 0) {
+        binaryString = (sum % 2) + binaryString;
+        sum = Math.floor(sum / 2);
+        console.log(sum)
+        console.log(binaryString)
+    }
+    console.log(binaryString)
+    return binaryString || "0"; //or if we can use
+}
+
+console.log(addBinary2(9,2))
+
