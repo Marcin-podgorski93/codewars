@@ -29,4 +29,5 @@ const inNumberInArrayOfArrays1 = (number, array) => {
     return false;
 }; 
 
-console.log(inNumberInArrayOfArrays(0, arr));
+console.log(inNumberInArrayOfArrays1(0, arr));
+console.log(inNumberInArrayOfArrays1(37, arr));
