@@ -15,6 +15,19 @@ const inNumberInArrayOfArrays = (number, array) => {
 
 console.log(inNumberInArrayOfArrays(3, arr));
 
+//or
+
+const inNumberInArrayOfArrays2 = (number, array) => {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].includes(number)) {
+            console.log(array[i])
+            return true;
+        }        
+    }
+    return false;
+}
+
+console.log(inNumberInArrayOfArrays2(21, arr));
 
 // or
 
