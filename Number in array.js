@@ -44,3 +44,44 @@ const inNumberInArrayOfArrays1 = (number, array) => {
 
 console.log(inNumberInArrayOfArrays1(0, arr));
 console.log(inNumberInArrayOfArrays1(37, arr));
+
+
+// or 
+
+
+const inNumberInArrayOfArrays3 = (num, array) => {
+    for (let i = 0; i < array.length; i++) {
+        console.log(array[i]);
+        if (array[i].includes(num)) {
+            console.log(array[i]);
+            return true;
+        }
+    }
+    return false;
+};
+
+console.log(inNumberInArrayOfArrays3(0, arr));
+console.log(inNumberInArrayOfArrays3(21, arr));
+console.log(inNumberInArrayOfArrays3(221, arr));
+
+
+
+// or 
+
+const inNumberInArrayOfArrays4 = (num, array) => {
+    for (let i = 0; i < array.length; i++) {
+        const arrays = array[i];
+        console.log(arrays)
+        if (arrays.indexOf(num) !== -1) {
+            console.log(num);
+            console.log(i + 1)
+            console.log(`Liczba ${num} znajduje sie w tablicy numer ${i + 1}`)
+            return true;
+        }
+    }
+    return false;
+};
+
+// console.log(inNumberInArrayOfArrays4(0, arr));
+console.log(inNumberInArrayOfArrays4(21, arr));
+
