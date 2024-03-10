@@ -122,6 +122,7 @@ const listaMiast = [
     "Kraków Rzeszów 112"
 ];
 
+
 // Implementacja algorytmu najbliższego sąsiada
 function znajdzNajkrotszaTrase(listaMiast) {
     // Funkcja do obliczenia odległości między dwoma miastami
@@ -131,14 +132,9 @@ function znajdzNajkrotszaTrase(listaMiast) {
             return (miastoA === miasto1 && miastoB === miasto2) || (miastoA === miasto2 && miastoB === miasto1);
         });
         if (!trasa) {
-            console.log("Nie znaleziono trasy między", miasto1, "i", miasto2); // Dodaj debugger
-            debugger; // Punkt zatrzymania (debugger)
-        }
-        if (trasa) {
-            return parseFloat(trasa.split(" ")[2]); // Zwraca czas jako liczbę zmiennoprzecinkową
-        } else {
             return Infinity; // Zwraca nieskończoność, jeśli trasy nie ma w danych
         }
+        return parseFloat(trasa.split(" ")[2]); // Zwraca czas jako liczbę zmiennoprzecinkową
     }
 
     // Wybierz miasto początkowe
@@ -151,23 +147,29 @@ function znajdzNajkrotszaTrase(listaMiast) {
         let najkrotszaOdleglosc = Infinity;
         let najblizszeMiasto;
 
-        // Szukaj najbliższego miasta
+        // Szukaj najbliższego miasta, ale unikaj powtórzeń
         listaMiast.forEach(dane => {
-            const [miastoA, miastoB] = dane.split(" ").slice(0, 2);
-            if (aktualneMiasto && miastoA && miastoB && miastoA === aktualneMiasto && !trasa.includes(miastoB)) {
+            if (dane.startsWith(aktualneMiasto)) {
+                const [miastoA, miastoB, czas] = dane.split(" ");
                 const odleglosc = obliczOdleglosc(miastoA, miastoB);
-                if (odleglosc < najkrotszaOdleglosc) {
+                if (odleglosc < najkrotszaOdleglosc && !trasa.includes(miastoA) && !trasa.includes(miastoB)) {
                     najkrotszaOdleglosc = odleglosc;
-                    najblizszeMiasto = miastoB;
-                }
-            } else if (aktualneMiasto && miastoA && miastoB && miastoB === aktualneMiasto && !trasa.includes(miastoA)) {
-                const odleglosc = obliczOdleglosc(miastoA, miastoB);
-                if (odleglosc < najkrotszaOdleglosc) {
-                    najkrotszaOdleglosc = odleglosc;
-                    najblizszeMiasto = miastoA;
+                    najblizszeMiasto = miastoA === aktualneMiasto ? miastoB : miastoA;
                 }
             }
         });
+
+        // Sprawdź, czy znaleziono najbliższe miasto
+        if (!najblizszeMiasto) {
+            // Jeśli nie znaleziono miasta, wróć do Warszawy i znajdź pierwsze jeszcze nieodwiedzone miasto
+            najblizszeMiasto = listaMiast.find(dane => dane.startsWith(aktualneMiasto) && !trasa.includes(dane.split(" ")[1]));
+            if (najblizszeMiasto) {
+                najblizszeMiasto = najblizszeMiasto.split(" ")[1];
+            } else {
+                // Jeśli wszystkie miasta zostały odwiedzone, zakończ pętlę
+                break;
+            }
+        }
 
         // Dodaj najbliższe miasto do trasy
         trasa.push(najblizszeMiasto);
@@ -184,5 +186,3 @@ function znajdzNajkrotszaTrase(listaMiast) {
 // Obliczenie i wyświetlenie czasu najkrótszej trasy
 const czasTrasy = znajdzNajkrotszaTrase(listaMiast);
 console.log("Czas najkrótszej trasy:", czasTrasy, "minut");
-
-console.log(czasTrasy)
