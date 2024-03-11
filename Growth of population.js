@@ -13,3 +13,19 @@ function nbYear(p0, percent, aug, p) {
 }
 
 console.log(nbYear(1500, 5, 100, 5000))
+
+
+function nbYear1(pop, percent, aug, p) {
+    let year = 0;
+    let currentPopulation = pop;
+    while (currentPopulation < p) {
+        currentPopulation += Math.floor(currentPopulation * (percent / 100) + aug);
+        console.log(currentPopulation)
+        console.log(year);
+        year++;
+    }
+    return year;
+}
+
+
+console.log(nbYear1(1000, 2, 50, 1200))
