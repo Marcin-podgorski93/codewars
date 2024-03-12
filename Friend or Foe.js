@@ -8,7 +8,7 @@ function friend(names){
 
   console.log(outputNames);
 
-
+  
 //   console.log(friend)
 
 
