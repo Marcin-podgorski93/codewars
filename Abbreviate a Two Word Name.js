@@ -12,7 +12,6 @@ const nameChange = "Sam Harris";
 // }
 
 
-
 // console.log(abbrevName(nameChange))
 
 const splitName = nameChange.split(' ').map(word => word[0]).join('.').toUpperCase();
