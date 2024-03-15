@@ -34,4 +34,6 @@ function check(str) {
     return true;
 }
 
+
 console.log(check('mose'))
+
