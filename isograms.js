@@ -25,9 +25,10 @@
 // }
 
 function check(str) {
-    for (let i = 0; i < str.length - 1; i++) {
+    for (let i = 0; i < str.length; i++) {
+        str = str.toLowerCase();
         console.log(str[i])
-        if (str[i] === str[i + 1]) {
+        if (str.indexOf(str[i], i + 1) !== -1 ) {
             return false;
         }
     }
@@ -35,5 +36,5 @@ function check(str) {
 }
 
 
-console.log(check('mose'))
+console.log(check('aba'))
 

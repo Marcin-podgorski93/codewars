@@ -1,4 +1,5 @@
 
+// Zagniezdzone obiekty
 
 const person = {
     name: "Marcin",
@@ -31,3 +32,20 @@ console.log(id)
 console.log(personInfo)
 
 console.log(person)
+
+
+// zagniezdzone tablice
+
+const people = [
+    ["Filip", 29, "Kraków"],
+    ["Kacper", 30]
+]
+
+const [[personeOneName, personeOneAge], personTwo] = people
+
+
+
+
+console.log(personeOneName, personeOneAge)
+console.log(personTwo)
+
