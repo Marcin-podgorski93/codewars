@@ -7,17 +7,18 @@ const people = [
 
 
 
-const LogPersonInfo = (person) => {
-    console.log(`${person.name} ${person.lastName}, kraj: ${person.country}`) 
+const LogPersonInfo = (person, index) => {
+    console.log(`${index + 1} ${person.name} ${person.lastName}, kraj: ${person.country}`) 
 }
 
 
 for (let i = 0; i < people.length; i++) {
     const person = people[i];
-    LogPersonInfo(person);
+    LogPersonInfo(person, i);
 }
 
-people.forEach((person) => {
-    console.log(person);
-});
+
+// people.forEach((person) => {
+//     LogPersonInfo(person);
+// });
 
