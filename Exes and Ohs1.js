@@ -26,4 +26,23 @@ function checkletters(str) {
 }
 
 console.log(checkletters("xxoo"));
-console.log(checkletters("xxo"));
+console.log(checkletters("xoo"));
+
+
+
+function checkletters1(str) {
+    const splitLetter = str.toLowerCase().split('');
+    // console.log(splitLetter)
+    const checkX = splitLetter.filter( word => word === 'x').length;
+    const checkY = splitLetter.filter( word => word === 'o').length;
+    return checkX === checkY;
+}
+
+console.log(checkletters1("xo"))
+
+
+const word = "XooOXX";
+
+const checkWord = word.toLowerCase().split('').filter(word => word === 'x').length;
+
+console.log(checkWord)
