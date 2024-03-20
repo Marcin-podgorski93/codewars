@@ -29,3 +29,4 @@ function doubleChar(str) {
 //  mozna uzyc zamiast word => word.repeat(2)// word => word + word;
 
  console.log(doubleWord)
+ 
