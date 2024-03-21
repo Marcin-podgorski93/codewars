@@ -6,5 +6,14 @@
 
 
 function repeatStr (n, s) {
-    return '';
+    return s.repeat(n);
   }
+
+  console.log(repeatStr(6, 'I'))
+
+
+const word = "I";
+
+let repeat = word.repeat(6)
+
+console.log(repeat);
