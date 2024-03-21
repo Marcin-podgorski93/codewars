@@ -12,8 +12,20 @@ function repeatStr (n, s) {
   console.log(repeatStr(6, 'I'))
 
 
-const word = "I";
+const word = "world";
 
 let repeat = word.repeat(6)
 
 console.log(repeat);
+
+// reverse string
+
+let reverseWord = word.split('').reverse().join('');
+
+console.log(reverseWord)
+
+function solution(str){
+  return str.split('').reverse().join('');
+}
+
+console.log(solution('world'))
