@@ -39,6 +39,7 @@ function nbYear1(p0, percent, aug, p) {
         currentPopulation = Math.floor(currentPopulation * (1 + percent / 100) + aug);
         year ++;
         console.log(currentPopulation);
+        console.log(year);
     }
     return year;
 }
