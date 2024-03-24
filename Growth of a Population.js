@@ -12,18 +12,35 @@
 
 // It will need 3 entire years.
 
-function nbYear(p0, percent, aug, p) {
+// function nbYear(p0, percent, aug, p) {
+//     let year = 0;
+//     let currentPopulation = p0;
+//     console.log(currentPopulation);
+//     console.log(year);
+//     while (currentPopulation < p) {
+//         currentPopulation = Math.floor(currentPopulation * (1 + percent / 100) + aug);
+//         console.log(currentPopulation);
+//         year++;
+//     }
+//     console.log(currentPopulation);
+//     return year;
+// }
+
+// console.log(nbYear(1000, 2, 50, 1200))
+
+
+
+function nbYear1(p0, percent, aug, p) {
     let year = 0;
+    console.log(year);
     let currentPopulation = p0;
     console.log(currentPopulation);
-    console.log(year);
     while (currentPopulation < p) {
         currentPopulation = Math.floor(currentPopulation * (1 + percent / 100) + aug);
+        year ++;
         console.log(currentPopulation);
-        year++;
     }
-    console.log(currentPopulation);
     return year;
 }
 
-console.log(nbYear(1000, 2, 50, 1200))
+console.log(nbYear1(1000, 2, 50, 1200))
