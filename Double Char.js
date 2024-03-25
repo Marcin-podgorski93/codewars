@@ -30,3 +30,10 @@ function doubleChar(str) {
 
  console.log(doubleWord)
  
+
+
+ function doubleChar7(str) {
+  return str.split('').map(str => str.repeat(2)).join('');
+}
+
+console.log(doubleChar7("String"))
