@@ -35,7 +35,20 @@ const array = ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"];
 
 console.log(array)
 
-const findNeedle1 = array.indexOf("needle")
+const findNeedle1 = array.indexOf("needle");
+
+const result1 = `Found needle in position ${findNeedle1}`
 
 console.log(findNeedle1)
+console.log(result1)
+
+function checkarray(arr) {
+    const findNeedle = arr.indexOf("needle");
+    console.log(findNeedle)
+    let findIndex = `Found needle in position ${findNeedle + 1}`
+    return findIndex;
+}
+
+console.log(checkarray(array))
+
 
