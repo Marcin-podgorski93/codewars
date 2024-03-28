@@ -6,7 +6,11 @@
 
 const str = "This is an example!";
 
+let reverseWord1 = str.split(' ').map( word => word.split('').reverse().join('')).join(' ');
+
 console.log(str)
+
+console.log(reverseWord1)
 
 function reverseWord(str) {
     return str.split(' ').map(word => word.split('').reverse().join('')).join(' ');
