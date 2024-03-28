@@ -4,3 +4,13 @@
 // "This is an example!" ==> "sihT si na !elpmaxe"
 // "double  spaces"      ==> "elbuod  secaps"
 
+const str = "This is an example!";
+
+console.log(str)
+
+function reverseWord(str) {
+    return str.split(' ').map(word => word.split('').reverse().join('')).join(' ');
+}
+
+
+console.log(reverseWord("This is an example!"));
