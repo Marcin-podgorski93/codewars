@@ -18,3 +18,11 @@ function reverseWord(str) {
 
 
 console.log(reverseWord("This is an example!"));
+
+
+
+function reverseWord2(str) {
+    return str.split(' ').map( word => word.split('').reverse().join('')).join(' ');
+}
+
+console.log(reverseWord2("This is an example!"))
