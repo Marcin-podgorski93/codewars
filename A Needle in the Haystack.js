@@ -53,7 +53,23 @@ console.log(checkarray(array))
 
 
 function findIndex2(arr) {
-    return arr
+    const findNeedle = arr.indexOf("needle");
+    let foundIndex = `Found needle in position ${findNeedle + 1}`
+    return foundIndex;
 }
 
 console.log(findIndex2(array))
+
+
+function findIndex3(arr) {
+    arr.forEach((word,index) => {
+        console.log(word)
+        if (word === "needle") {
+            console.log(word, index)
+            result = `Found needle in position ${index}`
+        }
+    });
+    return result;
+}
+
+console.log(findIndex3(array))
