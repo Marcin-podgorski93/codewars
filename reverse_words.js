@@ -26,3 +26,5 @@ function reverseWord2(str) {
 }
 
 console.log(reverseWord2("This is an example!"))
+
+

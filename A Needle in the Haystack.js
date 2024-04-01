@@ -52,3 +52,8 @@ function checkarray(arr) {
 console.log(checkarray(array))
 
 
+function findIndex2(arr) {
+    return arr
+}
+
+console.log(findIndex2(array))
