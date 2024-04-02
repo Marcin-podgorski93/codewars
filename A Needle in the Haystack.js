@@ -73,3 +73,18 @@ function findIndex3(arr) {
 }
 
 console.log(findIndex3(array))
+
+
+
+
+
+
+console.log(array)
+
+const findarray1 = array.indexOf("needle");
+
+console.log(findarray1)
+
+const result2 = `Found needle in position ${findarray1 + 1}`;
+
+console.log(result2)
