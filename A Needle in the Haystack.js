@@ -88,3 +88,13 @@ console.log(findarray1)
 const result2 = `Found needle in position ${findarray1 + 1}`;
 
 console.log(result2)
+
+function findWord(arr) {
+    const findNeedle = arr.indexOf("needle");
+    console.log(findNeedle);
+    result = `Found needle in position ${findNeedle}`;
+    return result;
+
+}
+
+console.log(findWord(array))
